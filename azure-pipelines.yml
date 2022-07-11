@@ -26,11 +26,11 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
-          $(tag)
+          1.0.0
     - task: Docker@2
       displayName: Push an image
       inputs:
         containerRegistry: 'lightops-acr'
         repository: 'hyeh/pipeline-example'
         command: 'push'
-        tags: '$(tag)'
+        tags: 1.0.0
