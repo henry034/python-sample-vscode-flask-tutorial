@@ -25,6 +25,7 @@ stages:
       inputs:
         command: build
         containerRegistry: 'lightops-acr'
+        repository: 'hyeh/pipeline-example'
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: $(tag)
     - task: Docker@2
