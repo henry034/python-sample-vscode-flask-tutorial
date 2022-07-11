@@ -33,3 +33,4 @@ stages:
         containerRegistry: 'lightops-acr'
         repository: 'hyeh/pipeline-example'
         command: 'push'
+        tags: '$(tag)'
