@@ -24,13 +24,14 @@ stages:
       displayName: Build an image
       inputs:
         command: build
+        containerRegistry: 'lightops-acr'
+        repository: 'hyeh/pipeline-example'
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        tags: |
-          1.0.0
+        tags: $(tag)
     - task: Docker@2
       displayName: Push an image
       inputs:
         containerRegistry: 'lightops-acr'
         repository: 'hyeh/pipeline-example'
         command: 'push'
-        tags: 1.0.0
+        tags: $(tag)
